@@ -1,22 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
-	<title>PostCard Application</title>
-	
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Login</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
 	<link rel="stylesheet" href="stylesheets/base.css">
-	<script type="text/javascript"
-		src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js">
-	</script>
-	<script type="text/javascript">
-		$(function() {
-			$('body').fadeIn(2000, function() {
-				$(this).delay(1500).fadeOut(2000, function() { window.location = 'login.html'; });
-			});
-		});
-	</script>
-	<noscript>This is an <a href="login.html">alternate text link</a>for browsers with JavaScript disabled.</noscript>
+	<link rel="stylesheet" href="stylesheets/skeleton.css">
+	<link rel="stylesheet" href="stylesheets/layout.css">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
 </head>
 <body>
-	<img width="100%" height="100%" src="images/splashscreen.png"/>
+	<script>
+		function login(){
+			//document.getElementById( "loginBtn" ).onclick = function() {
+		    window.location = 'menu.html';
+			//};
+		}
+	</script>
+	<!-- Primary Page Layout
+	================================================== -->
+
+	<div class="container">
+		<div class="sixteen columns">
+			<center>
+				<img src="images/tulisan-lasegarkan.png" />
+				<hr />
+  				<input type="text" id="regularInput" placeholder="Username"  />
+  				<input type="text" id="passwordInput" placeholder="Password"  />
+				<a href="menu.html"><img id="loginBtn" src="images/button-login.png" width="270px" oncLick="login()"/></a>
+			</center>
+		</div>
+	</div><!-- container -->
+
+	<script>
+		var passwordField = document.getElementById("passwordInput");
+			passwordField.onkeydown=function(e){
+				var e=window.event || e
+				if(e.keyCode == 13)
+					window.location = 'menu.html';
+			}
+	</script>
+
+<!-- End Document
+================================================== -->
 </body>
 </html>
